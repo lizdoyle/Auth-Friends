@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import axiosWithAuth from "../../utils/axiosWithAuth";
+import { axiosWithAuth} from "../../utils/axiosWithAuth";
 
 const Login = (props) => {
 
@@ -13,7 +13,7 @@ const Login = (props) => {
                     console.log(res.data)
 
                     localStorage.setItem('token', res.data.token);
-                    this.props.history.push('/');
+                    this.props.history.location.push('/');
                 })
                 .catch(err => console.log(err))
     }
@@ -50,6 +50,6 @@ const Login = (props) => {
 
         </form>
     )
-    }
+}
 
 export default Login
